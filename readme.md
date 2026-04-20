@@ -1,16 +1,42 @@
-# AeroTransformer: Towards a foundation-model style aerodynamic surrogate model
+# Towards a Foundation-Model Paradigm for Aerodynamic Prediction in Three-dimensional Design
 
-This repository contains the open-sourced resources for the AeroTransformer described in:
+<div align="center">
 
-**Towards a Foundation-Model Paradigm for Aerodynamic Prediction in Three-dimensional Shape Design**  
-Yunjia Yang, Babak Gholami, Caglar Gurbuz, Mohammad Rashed, Nils Thuerey
+[Paper]() •
+[🤗 Hugging Face](https://huggingface.co/collections/thuerey-group)
 
-The project follows a two-stage workflow:
 
-1. **Pre-training** on a large and diverse wing dataset (SuperWing).
-2. **Fine-tuning** on a task-specific local design space (e.g., CRM-perturbed wings).
+[Yunjia Yang](https://yangyunjia.github.io/), [Babak Gholami](), [Caglar Gurbuz](), [Mohammad Rashed](), [Nils Thuerey](https://ge.in.tum.de/about/n-thuerey/)
 
-The goal is to build reusable aerodynamic surrogate models that remain accurate under limited task-specific data.
+</div>
+
+---
+
+![right](./.assets/images/gif.gif)
+
+This work introduces a **foundation-model style methodology** for efficiently constructing accurate surrogate models for **three-dimensional configurations**. It includes a two-stage strategy, which first pre-training a large-scale model on diverse geometries and then fine-tuning it with a few more detailed task-specific samples. A Transformer-based architecture, AeroTransformer, is developed and tailored for large-scale training to learn aerodynamics. 
+
+We evaluated the method on *transonic wings*, where the model is pre-trained on [SuperWing](https://huggingface.co/datasets/yunplus/SuperWing) (including nearly 30000 samples with broad geometric diversity) and fine-tuned to handle specific wing shapes perturbed from the [Common Research Model](https://commonresearchmodel.larc.nasa.gov/). 
+
+
+We observed: 
+
+- pre-trained model learned the dominate aerodynamics, and perform well with very small task specific dataset (even zero-shot).
+
+  <div align="center">
+    <img src="./.assets/images/crmcp.png" width="80%">
+    <img src="./.assets/images/crmcoef.png" width="70%">
+  </div>
+
+- with 450 task-specific samples, the proposed methodology achieves 0.36\% error on surface-flow prediction (**1.2% error in $\bm {C_D}$**), reducing 84.2\% compared to training from scratch.
+
+  <div align="center">
+    <img src="./.assets/images/smalldata.png" width="70%">
+  </div>
+
+
+We also studied the influence of model configurations and training strategies to provide guidance on effectively training and deploying such models under limited data and computational budgets.
+
 
 ## Resources Overview
 - Paper
