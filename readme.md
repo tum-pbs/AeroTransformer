@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[Paper]() •
+[Paper](https://arxiv.org/abs/2604.18062) •
 [🤗 Hugging Face](https://huggingface.co/collections/thuerey-group)
 
 
@@ -88,6 +88,17 @@ AeroTransformer/
 
 ## Citation
 
+```
+@misc{yang2026foundationmodelparadigmaerodynamicprediction,
+      title={Towards a Foundation-Model Paradigm for Aerodynamic Prediction in Three-dimensional Design}, 
+      author={Yunjia Yang and Babak Gholami and Caglar Gurbuz and Mohammad Rashed and Nils Thuerey},
+      year={2026},
+      eprint={2604.18062},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2604.18062}, 
+}
+```
 
 ## License
 
