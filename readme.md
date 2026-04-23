@@ -2,8 +2,11 @@
 
 <div align="center">
 
-[Paper](https://arxiv.org/abs/2604.18062) •
-[🤗 Hugging Face](https://huggingface.co/collections/thuerey-group)
+[Paper](https://arxiv.org/abs/2604.18062)  • 
+[🤗 Hugging Face](https://huggingface.co/collections/thuerey-group) •
+[<img src="./.assets/images/icon.png" style="height:1em; vertical-align:middle;" /> Demo](https://webwing.pbs.cit.tum.de/)
+
+
 
 
 [Yunjia Yang](https://yangyunjia.github.io/), [Babak Gholami](), [Caglar Gurbuz](), [Mohammad Rashed](), [Nils Thuerey](https://ge.in.tum.de/about/n-thuerey/)
@@ -41,12 +44,12 @@ We also studied the influence of model configurations and training strategies to
 ## Resources Overview
 - Paper
 
-- Dataset collection:  
+- 🤗 Dataset collection:  
   - SuperWing (Pre-training dataset)        
     [https://huggingface.co/datasets/yunplus/SuperWing](https://huggingface.co/datasets/yunplus/SuperWing)
   - CRMpert (Task-specfic fine-tuning dataset)
   [https://huggingface.co/datasets/thuerey-group/CRMpert](https://huggingface.co/datasets/thuerey-group/CRMpert)
-- Model hyperparameter collection (Pre-trained and fine-tuned):  
+- 🤗 Model hyperparameter collection (Pre-trained and fine-tuned):  
   [https://huggingface.co/thuerey-group/AeroTransformer](https://huggingface.co/thuerey-group/AeroTransformer)
 - Implementation dependency:  
   - Model implementation (`FloGen` repo)
@@ -54,7 +57,7 @@ We also studied the influence of model configurations and training strategies to
   - Wing postprocess and visualazation (`cfdpost` repo) 
     [https://github.com/YangYunjia/cfdpost](https://github.com/YangYunjia/cfdpost)
 - Training and simulation source code (here)
-- `WebWing` Online interactive wing design tool:
+- <img src="./.assets/images/icon.png" style="height:1em; vertical-align:middle;" /> `WebWing` Online interactive wing design tool:
     - Online version: [https://webwing.pbs.cit.tum.de/](https://webwing.pbs.cit.tum.de/)
     - Source code: [https://github.com/YangYunjia/webwing](https://github.com/YangYunjia/webwing)
 
