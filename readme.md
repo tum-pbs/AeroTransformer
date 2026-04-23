@@ -15,46 +15,45 @@
 
 ---
 
-![right](./.assets/images/gif.gif)
+![majorimage](./.assets/images/gif.gif)
 
-This work introduces a **foundation-model style methodology** for efficiently constructing accurate surrogate models for **three-dimensional configurations**. It includes a two-stage strategy, which first pre-training a large-scale model on diverse geometries and then fine-tuning it with a few more detailed task-specific samples. A Transformer-based architecture, AeroTransformer, is developed and tailored for large-scale training to learn aerodynamics. 
+This work introduces a **foundation-model style methodology** for efficiently constructing accurate surrogate models for **three-dimensional configurations**. It includes a two-stage strategy: first, it pre-trains a large-scale model on diverse geometries, and then fine-tunes it with a few more detailed task-specific samples. 
 
 We evaluated the method on *transonic wings*, where the model is pre-trained on [SuperWing](https://huggingface.co/datasets/yunplus/SuperWing) (including nearly 30000 samples with broad geometric diversity) and fine-tuned to handle specific wing shapes perturbed from the [Common Research Model](https://commonresearchmodel.larc.nasa.gov/). 
 
 
 We observed: 
 
-- pre-trained model learned the dominate aerodynamics, and perform well with very small task specific dataset (even zero-shot).
+- pre-trained model learned the dominant aerodynamics, and performs well with a very small task-specific dataset (even zero-shot).
 
   <div align="center">
     <img src="./.assets/images/crmcp.png" width="80%">
     <img src="./.assets/images/crmcoef.png" width="70%">
   </div>
 
-- with 450 task-specific samples, the proposed methodology achieves 0.36\% error on surface-flow prediction (**1.2% error in $\bm {C_D}$**), reducing 84.2\% compared to training from scratch.
+- with 450 task-specific samples, the proposed methodology achieves 0.36\% error on surface-flow prediction (**1.2% error in drag coefficient ${C_D}$**), reducing 84.2\% compared to training from scratch.
 
   <div align="center">
     <img src="./.assets/images/smalldata.png" width="70%">
   </div>
 
 
-We also studied the influence of model configurations and training strategies to provide guidance on effectively training and deploying such models under limited data and computational budgets.
+We also studied the influence of model configurations and training strategies to guide the effective training and deployment of such models under limited data and computational budgets.
 
 
 ## Resources Overview
-- Paper
 
 - 🤗 Dataset collection:  
   - SuperWing (Pre-training dataset)        
     [https://huggingface.co/datasets/yunplus/SuperWing](https://huggingface.co/datasets/yunplus/SuperWing)
-  - CRMpert (Task-specfic fine-tuning dataset)
+  - CRMpert (Task-specific fine-tuning dataset)
   [https://huggingface.co/datasets/thuerey-group/CRMpert](https://huggingface.co/datasets/thuerey-group/CRMpert)
 - 🤗 Model hyperparameter collection (Pre-trained and fine-tuned):  
   [https://huggingface.co/thuerey-group/AeroTransformer](https://huggingface.co/thuerey-group/AeroTransformer)
 - Implementation dependency:  
   - Model implementation (`FloGen` repo)
     [https://github.com/YangYunjia/floGen](https://github.com/YangYunjia/floGen)
-  - Wing postprocess and visualazation (`cfdpost` repo) 
+  - Wing postprocess and visualization (`cfdpost` repo) 
     [https://github.com/YangYunjia/cfdpost](https://github.com/YangYunjia/cfdpost)
 - Training and simulation source code (here)
 - <img src="./.assets/images/icon.png" style="height:1em; vertical-align:middle;" /> `WebWing` Online interactive wing design tool:
@@ -77,7 +76,7 @@ AeroTransformer/
 ├── simulation/
 │   ├── gen-mesh.crmpert.py      # surface + volumetric mesh generation for CRMpert dataset
 │   ├── gen-mesh.superwing.py    # surface + volumetric mesh generation for SuperWing dataset
-│   ├── original_tip.xyz  # tempelate wing tip shape and mesh
+│   ├── original_tip.xyz  # template wing tip shape and mesh
 │   ├── run-adflow.py     # calling the pyADflow solver
 │   └── single-point.py   # main function for simulating single/multiple samples for one shape
 ├── LICENSE
